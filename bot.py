@@ -14,7 +14,7 @@ sad= [
 ]
 
 horrible = [
-    'corridos tumbados', 'sierreno', 'corrido', 'banda', 'norteno', 'regional mexican', 'norteño',
+    'corridos tumbados', 'sierreno', 'corrido', 'banda', 'norteño', 'regional mexican', 'norteño',
     'reggaeton', 'urbano', 'latin urban', 'trap latino', 'dembow', 'perreo', 'reggae',
     'ranchera', 'mariachi', 'bolero'
 ]
@@ -107,9 +107,12 @@ class MuK(discord.Client):
                 artist = self.network.get_artist(artist_buscado)
                 bio = artist.get_bio_summary()
                 bio = re.sub(r'<[^>]*>', " ", bio).strip()
-                await message.channel.send(bio)
+                if not bio or bio.startswith("Read more"):
+                    await message.channel.send(f"El artista '**{artist_buscado}**' no existe en mis registros o no tiene biografía.")
+                else:
+                    await message.channel.send(bio)
             except:
-                await message.channel.send("No encontré a ese artista. :(")
+                await message.channel.send(f"Híjole, hubo un error buscando a '{artist_buscado}'.")
 
         if txt.startswith('!rec '):
             artist_reco = txt.replace('!rec ', "").strip()
