@@ -1,6 +1,6 @@
 # MuK - El Bot Crítico de Música para Discord
 
-**MuK** es un bot de Discord impulsado por Python que se conecta a la API de **Last.fm**. Su propósito principal no es solo mostrar lo que estás escuchando, sino **juzgarte por ello**. 
+**MuK** es un bot de Discord hecho en Python que se conecta a la API de **Last.fm**. Su propósito principal no es solo mostrar lo que estás escuchando, sino **juzgarte por ello**. 
 
 MuK vigilará tus *scrobbles* en tiempo real y reaccionará dependiendo del género musical: te ofrecerá un abrazo si andas escuchando música deprimente, se quejará amargamente si pones música cuestionable (como reggaetón o corridos tumbados), y te felicitará si tienes buen gusto. Además, funciona como una enciclopedia musical básica.
 
